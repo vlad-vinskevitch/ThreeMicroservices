@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Customer Details</title>
+    </head>
+    <body>
+        <h1>View Customer</h1>
+        <a href="/">Back to User List</a>
+        <br/><br/>
+        {{#user}}
+            <table border="0">
+                <tr>
+                    <td>ID</td>
+                    <td>:</td>
+                    <td>{{id}}</td>          
+                </tr>
+                <tr>
+                    <td>firstName</td>
+                    <td>:</td>
+                    <td>{{firstName}}</td>             
+                </tr>
+                <tr>
+                    <td>middleName</td>
+                    <td>:</td>
+                    <td>{{middleName}}</td>              
+                </tr>
+                <tr>
+                    <td>lastName</td>
+                    <td>:</td>
+                    <td>{{lastName}}</td>              
+                </tr>
+            </table>
+            <br/><br/>
+            {{#allowDelete}}
+                <form action="/{{id}}/delete" method="POST">
+                    Delete this Customer? <input type="submit" value="Yes" />
+                </form>
+            {{/allowDelete}}
+            {{^allowDelete}}
+                <div>
+                    <a href="/{{id}}/edit">Edit</a> |
+                    <a href="/{{id}}/delete">Delete</a>
+                </div>
+            {{/allowDelete}}
+        {{/user}}
+        {{#errorMessage}}
+            <div class="error">{{errorMessage}}</div>
+        {{/errorMessage}}
+    </body>
+</html>

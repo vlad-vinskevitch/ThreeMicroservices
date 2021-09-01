@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8" />
+        <title>User List</title>
+</head>
+    <body>
+        <h1>User List</h1>
+        
+        <div>
+            <nobr>
+                <a href="/add">Add User</a> 
+            </nobr>
+        </div>
+        <br/><br/>
+        <div>
+            <table border="1">
+                <tr>
+                    <th>Id</th>
+                    <th>firstName</th>
+                    <th>middleName</th>
+                    <th>lastName</th>
+                    <th>Edit</th>
+                    <th>Delete</th>                      
+                </tr>
+                {{#customers}}
+                    <tr>
+                        <td><a href="/{{id}}">{{id}}</a></td>
+                        <td>{{firstName}}</td>
+                        <td>{{middleName}}</td>
+                        <td>{{lastName}}</td>
+                        <td><a href="/{{id}}/edit">Edit</a></td>
+                        <td><a href="/{{id}}/delete">Delete</a></td>
+                    </tr>
+                {{/customers}}
+            </table>          
+        </div>
+    </body>
+</html>

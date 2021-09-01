@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8" />
+        <title>Edit Customer</title>
+    </head>
+    <body>
+        <h1>Edit User</h1>
+        <a href="/">Back to Customer List</a>
+        <br/><br/>
+        {{#user}}
+        <form  method="POST">
+            <table border="0">
+                <tr>
+                    <td>First Name</td>
+                    <td>:</td>
+                    <td><input type="text" name="firstName" value="{{firstName}}"placeholder="firstName" /></td>              
+                </tr>
+                <tr>
+                    <td>Middle Name</td>
+                    <td>:</td>
+                    <td><input type="text" name="middleName" value="{{middleName}}" placeholder="middleName"/></td>              
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>:</td>
+                    <td><input type="text" name="lastName" value="{{lastName}}" placeholder="lastName" /></td>              
+                </tr>
+            </table>
+            <button type="submit">Edit</button>
+        </form>
+     {{/user}}
+    </body>
+</html>
